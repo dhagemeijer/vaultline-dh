@@ -75,6 +75,18 @@ export const ideas: Idea[] = [
     status: "idee",
   },
   {
+    title: "Live tickerbalk onderaan",
+    description: "Doorlopende balk onderaan de pagina met coin-prijzen en 24u-verandering, geïnspireerd op professionele trading terminals.",
+    phase: "later",
+    status: "idee",
+  },
+  {
+    title: "Sidebar-navigatie",
+    description: "Navigatie als zijbalk in plaats van de huidige topbar, zoals bij professionele trading terminals.",
+    phase: "later",
+    status: "idee",
+  },
+  {
     title: "Spraakbediening",
     description: "Met het dashboard kunnen communiceren via spraak in plaats van alleen tekst/klik.",
     phase: "later",

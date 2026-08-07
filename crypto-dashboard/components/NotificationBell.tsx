@@ -42,7 +42,7 @@ export default function NotificationBell() {
       <button
         onClick={() => setOpen(true)}
         aria-label={`Meldingen${notifications.length > 0 ? ` (${notifications.length} ongelezen)` : ""}`}
-        className="relative rounded-full p-2 text-ink/70 hover:bg-ink/5 hover:text-ink"
+        className="relative rounded-full p-2 text-parchment/70 hover:bg-parchment/5 hover:text-parchment"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
           <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />

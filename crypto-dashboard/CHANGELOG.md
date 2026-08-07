@@ -3,6 +3,45 @@
 Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
 Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
 
+## 1.8.0 — 2026-08-07
+
+- **Clean/advanced-toggle** toegevoegd in de header: schakelt tussen de
+  ruime ("clean") en compacte, informatiedichte ("advanced") vormgeving
+  uit 1.7.0. Beide versies blijven dus behouden — je kiest zelf. Keuze
+  wordt onthouden via een cookie, blijft dus staan bij een volgend bezoek.
+  - Nieuw: `lib/density-context.tsx` (React context + cookie-opslag),
+    `components/DensityToggle.tsx`, `components/DashboardView.tsx`
+    (dashboard-layout uitgesplitst van `app/page.tsx` zodat de client-side
+    density-keuze de spacing kan aansturen terwijl databophalen
+    server-side blijft).
+
+## 1.7.0 — 2026-08-07
+
+- **Compactere, informatiedichtere kaarten**, geïnspireerd op professionele
+  trading-terminal-vormgeving: kleinere padding op kaarten en tabelcellen,
+  strakkere marges tussen secties, iets kleinere kopjes. Gauges blijven de
+  huidige halve-boog-vorm met tick-markeringen (bewust niet omgezet naar
+  volle cirkel-ringen).
+- Twee ideeën toegevoegd aan de roadmap voor later: een live tickerbalk
+  onderaan de pagina, en sidebar-navigatie i.p.v. de huidige topbar.
+
+## 1.6.3 — 2026-08-07
+
+- **Bugfix**: donkere achtergrondkleuren (canvas, kaarten, hairlines) hadden
+  een ongewenste warme/bruine ondertoon. Vervangen door neutrale
+  antraciet/koel-grijstinten. Favicon en PWA-iconen opnieuw gegenereerd met
+  de nieuwe achtergrondkleur.
+
+## 1.6.2 — 2026-08-07
+
+- **Bugfix**: header en footer stonden nog op een lichte achtergrond
+  (overgebleven uit het oude thema), wat het witte/rode logo onleesbaar
+  maakte. Beide zijn nu consistent donker, net als de rest van de pagina.
+  Het logo zelf was al correct (wit/rood, transparant) — dat hoefde niet
+  aangepast te worden.
+- Iconen en badges in de header (alerts-knop, meldingenbel) bijgewerkt
+  naar lichte kleuren passend bij de donkere achtergrond.
+
 ## 1.6.1 — 2026-08-07
 
 - **Inter** toegevoegd als derde lettertype, specifiek voor lopende

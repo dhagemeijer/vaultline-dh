@@ -32,17 +32,17 @@ export default function TopMovers({ holdings, prices, marketGainers, marketLoser
   const worst = withChange[withChange.length - 1];
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="rounded-2xl border border-hairline bg-panel p-5">
-        <h2 className="mb-4 font-display text-lg text-parchment/90">Jouw grootste bewegers</h2>
+    <div className="flex flex-col gap-3">
+      <div className="rounded-2xl border border-hairline bg-panel p-4">
+        <h2 className="mb-2.5 font-display text-base text-parchment/90">Jouw grootste bewegers</h2>
         <div className="flex flex-col gap-3">
           {best && <MoverRow label={best.name} change={best.change24h} />}
           {worst && <MoverRow label={worst.name} change={worst.change24h} />}
         </div>
       </div>
 
-      <div className="rounded-2xl border border-hairline bg-panel p-5">
-        <h2 className="mb-4 font-display text-lg text-parchment/90">Grootste bewegers · hele markt</h2>
+      <div className="rounded-2xl border border-hairline bg-panel p-4">
+        <h2 className="mb-2.5 font-display text-base text-parchment/90">Grootste bewegers · hele markt</h2>
         <div className="flex flex-col gap-3">
           {marketGainers.map((m) => (
             <MoverRow key={`g-${m.symbol}`} label={m.symbol} change={m.change24h} />

@@ -28,12 +28,12 @@ export default function HoldingsTable({ holdings, prices }: Props) {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-hairline text-left text-xs uppercase tracking-wider text-parchment/50">
-              <th className="px-5 py-3 font-body font-normal">Coin</th>
-              <th className="px-5 py-3 font-body font-normal text-right">Bezit</th>
-              <th className="px-5 py-3 font-body font-normal text-right">Waarde</th>
-              <th className="px-5 py-3 font-body font-normal text-right">Resultaat</th>
-              <th className="px-5 py-3 font-body font-normal text-right">24u</th>
-              <th className="px-5 py-3 font-body font-normal">Risico</th>
+              <th className="px-4 py-2 font-body font-normal">Coin</th>
+              <th className="px-4 py-2 font-body font-normal text-right">Bezit</th>
+              <th className="px-4 py-2 font-body font-normal text-right">Waarde</th>
+              <th className="px-4 py-2 font-body font-normal text-right">Resultaat</th>
+              <th className="px-4 py-2 font-body font-normal text-right">24u</th>
+              <th className="px-4 py-2 font-body font-normal">Risico</th>
             </tr>
           </thead>
           <tbody>
@@ -41,15 +41,15 @@ export default function HoldingsTable({ holdings, prices }: Props) {
               const { value, pl, plPct, change24h, positive } = computeRow(h, prices);
               return (
                 <tr key={h.symbol} id={`coin-${h.symbol}`} className="scroll-mt-24 border-b border-hairline/50 last:border-0 hover:bg-panel2/60">
-                  <td className="px-5 py-4">
+                  <td className="px-4 py-2.5">
                     <div className="font-display text-base">{h.name}</div>
                     <div className="font-mono text-xs text-parchment/50">{h.symbol}</div>
                   </td>
-                  <td className="px-5 py-4 text-right font-mono tabular text-parchment/80">
+                  <td className="px-4 py-2.5 text-right font-mono tabular text-parchment/80">
                     {h.amount.toLocaleString("nl-NL", { maximumFractionDigits: 6 })}
                   </td>
-                  <td className="px-5 py-4 text-right font-mono tabular">{formatEUR(value)}</td>
-                  <td className={`px-5 py-4 text-right font-mono tabular ${positive ? "text-pos" : "text-neg"}`}>
+                  <td className="px-4 py-2.5 text-right font-mono tabular">{formatEUR(value)}</td>
+                  <td className={`px-4 py-2.5 text-right font-mono tabular ${positive ? "text-pos" : "text-neg"}`}>
                     {positive ? "+" : ""}
                     {formatEUR(pl)}
                     <div className="text-xs opacity-80">
@@ -57,11 +57,11 @@ export default function HoldingsTable({ holdings, prices }: Props) {
                       {plPct.toFixed(1)}%
                     </div>
                   </td>
-                  <td className={`px-5 py-4 text-right font-mono tabular ${change24h >= 0 ? "text-pos" : "text-neg"}`}>
+                  <td className={`px-4 py-2.5 text-right font-mono tabular ${change24h >= 0 ? "text-pos" : "text-neg"}`}>
                     {change24h >= 0 ? "+" : ""}
                     {change24h.toFixed(2)}%
                   </td>
-                  <td className="px-5 py-4">
+                  <td className="px-4 py-2.5">
                     <span
                       className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs"
                       style={{ borderColor: RISK_COLORS[h.riskTier], color: RISK_COLORS[h.riskTier] }}

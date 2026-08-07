@@ -31,9 +31,9 @@ export default function PerformanceChart({ currentValue }: { currentValue: numbe
   const data = useMemo(() => generateSeries(currentValue, RANGE_POINTS[range]), [range, currentValue]);
 
   return (
-    <div className="rounded-2xl border border-hairline bg-panel p-5">
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-display text-lg text-parchment/90">Ontwikkeling wallet</h2>
+    <div className="rounded-2xl border border-hairline bg-panel p-4">
+      <div className="mb-2.5 flex items-center justify-between">
+        <h2 className="font-display text-base text-parchment/90">Ontwikkeling wallet</h2>
         <div className="flex gap-1 rounded-full border border-hairline p-1">
           {(Object.keys(RANGE_LABELS) as Range[]).map((r) => (
             <button
@@ -58,7 +58,7 @@ export default function PerformanceChart({ currentValue }: { currentValue: numbe
           <XAxis dataKey="t" hide />
           <YAxis hide domain={["dataMin - 50", "dataMax + 50"]} />
           <Tooltip
-            contentStyle={{ background: "#17150F", border: "1px solid #2C2820", borderRadius: 8, color: "#F3F1EA" }}
+            contentStyle={{ background: "#151618", border: "1px solid #2A2D30", borderRadius: 8, color: "#F3F1EA" }}
             labelFormatter={() => ""}
             formatter={(v: number) => [`€${v.toLocaleString("nl-NL")}`, "Waarde"]}
           />

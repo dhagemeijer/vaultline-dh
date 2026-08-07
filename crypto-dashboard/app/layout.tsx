@@ -3,6 +3,7 @@ import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
+import { DensityProvider } from "@/lib/density-context";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0D0C0A",
+  themeColor: "#0A0B0C",
 };
 
 export default function RootLayout({
@@ -50,9 +51,11 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable} flex min-h-screen flex-col font-body bg-ink text-parchment antialiased`}
       >
-        <SiteHeader />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <DensityProvider>
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </DensityProvider>
       </body>
     </html>
   );

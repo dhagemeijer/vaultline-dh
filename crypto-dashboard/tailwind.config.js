@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#0D0C0A",
-        panel: "#17150F",
-        panel2: "#1D1B15",
-        hairline: "#2C2820",
+        ink: "#0A0B0C",
+        panel: "#151618",
+        panel2: "#1B1D1F",
+        hairline: "#2A2D30",
         parchment: "#F3F1EA",
         risky: "#C23B3B",
         safe: "#8A8680",

@@ -31,7 +31,7 @@ export default function Gauge({ label, value, percent, color, glow = true }: Pro
   });
 
   return (
-    <div className="rounded-2xl border border-hairline bg-panel p-4 text-center">
+    <div className="rounded-2xl border border-hairline bg-panel p-3 text-center">
       <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-parchment/50">{label}</p>
       <svg viewBox="0 0 100 58" className="mx-auto w-full max-w-[130px]">
         {ticks.map((t, i) => (

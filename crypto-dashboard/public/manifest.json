@@ -4,8 +4,8 @@
   "description": "Persoonlijk crypto wallet dashboard",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0D0C0A",
-  "theme_color": "#0D0C0A",
+  "background_color": "#0A0B0C",
+  "theme_color": "#0A0B0C",
   "gcm_sender_id": "103953800507",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
