@@ -96,13 +96,13 @@ export default async function DashboardPage() {
           label="Sinds gisteren 00:00u"
           value={`${dayChangePct >= 0 ? "+" : ""}${dayChangePct.toFixed(1)}%`}
           percent={dayChangeGaugePercent}
-          color={dayChangePct >= 0 ? "#2F6B3A" : "#8B0000"}
+          color={dayChangePct >= 0 ? "#4CAF7D" : "#C23B3B"}
         />
         <Gauge
           label="Belegd vs. saldo"
           value={`${investedPct.toFixed(0)}% belegd`}
           percent={investedPct}
-          color="#141210"
+          color="#F3F1EA"
         />
       </section>
 

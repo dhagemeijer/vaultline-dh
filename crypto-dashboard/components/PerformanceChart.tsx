@@ -58,11 +58,11 @@ export default function PerformanceChart({ currentValue }: { currentValue: numbe
           <XAxis dataKey="t" hide />
           <YAxis hide domain={["dataMin - 50", "dataMax + 50"]} />
           <Tooltip
-            contentStyle={{ background: "#FFFFFF", border: "1px solid #E4E1D8", borderRadius: 8, color: "#141210" }}
+            contentStyle={{ background: "#17150F", border: "1px solid #2C2820", borderRadius: 8, color: "#F3F1EA" }}
             labelFormatter={() => ""}
             formatter={(v: number) => [`€${v.toLocaleString("nl-NL")}`, "Waarde"]}
           />
-          <Line type="monotone" dataKey="v" stroke="#8B0000" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="v" stroke="#C23B3B" strokeWidth={2} dot={false} />
         </LineChart>
       </ResponsiveContainer>
     </div>

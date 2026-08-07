@@ -1,7 +1,26 @@
 import type { Metadata, Viewport } from "next";
+import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-display",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono-jb",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Vaultline — Wallet dashboard",
@@ -18,7 +37,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#141210",
+  themeColor: "#0D0C0A",
 };
 
 export default function RootLayout({
@@ -28,7 +47,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body className="flex min-h-screen flex-col font-body bg-ink text-parchment antialiased">
+      <body
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable} flex min-h-screen flex-col font-body bg-ink text-parchment antialiased`}
+      >
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <Footer />

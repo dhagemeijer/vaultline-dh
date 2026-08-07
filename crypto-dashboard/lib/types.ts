@@ -50,7 +50,7 @@ export const RISK_LABELS: Record<RiskTier, string> = {
 };
 
 export const RISK_COLORS: Record<RiskTier, string> = {
-  risky: "#8B0000",
-  safe: "#5C5952",
-  stable: "#141210",
+  risky: "#C23B3B",
+  safe: "#8A8680",
+  stable: "#F3F1EA",
 };

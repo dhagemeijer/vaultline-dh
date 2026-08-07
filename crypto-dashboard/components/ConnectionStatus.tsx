@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 type Status = "connecting" | "connected" | "disconnected";
 
 const STATUS_COLOR: Record<Status, string> = {
-  connecting: "#B08A2E",
-  connected: "#2F6B3A",
-  disconnected: "#8B0000",
+  connecting: "#C7973D",
+  connected: "#4CAF7D",
+  disconnected: "#C23B3B",
 };
 
 const STATUS_LABEL: Record<Status, string> = {

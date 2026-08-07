@@ -3,6 +3,30 @@
 Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
 Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
 
+## 1.6.1 — 2026-08-07
+
+- **Inter** toegevoegd als derde lettertype, specifiek voor lopende
+  tekst/labels (`font-body`). Space Grotesk blijft voor koppen
+  (`font-display`), JetBrains Mono voor cijfers/data (`font-mono`).
+
+## 1.6.0 — 2026-08-07
+
+- **Volledig donker thema**: warm-witte achtergrond vervangen door een
+  bijna-zwarte (#0D0C0A) achtergrond met lichte tekst. Kaarten, hairlines,
+  chart-tooltip en risicokleuren zijn allemaal bijgewerkt naar de donkere
+  variant. De header blijft licht (voor logo-leesbaarheid), de rest van de
+  pagina is donker.
+- **Lettertype vernieuwd**: Space Grotesk voor koppen/labels, JetBrains
+  Mono voor cijfers en data — professionelere, technischere uitstraling
+  dan de vorige Georgia-serif. Geladen via `next/font/google` (zelf-gehost
+  na build, geen doorlopende Google-afhankelijkheid voor bezoekers).
+- **Gauges futuristischer**: tick-markeringen langs de boog, gloeiend
+  naaldpunt, monospace cijferweergave. Rood (#C23B3B, iets levendiger dan
+  het vorige #8B0000) is nu een bredere accentkleur, niet alleen voor
+  negatieve waarden.
+- Logo in de header flink vergroot: 5px padding op zowel mobiel als
+  desktop, logo vult nu vrijwel de hele headerband.
+
 ## 1.5.0 — 2026-08-07
 
 - **Dashboard-indeling herzien:**
