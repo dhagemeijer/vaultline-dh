@@ -3,6 +3,33 @@
 Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
 Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
 
+## 1.4.0 — 2026-08-07
+
+- **Instelbare prijs-alerts** toegevoegd op `/alerts`: per coin, drempel als
+  bedrag of percentage (percentage rekent vanaf een vast referentiepunt op
+  het moment van instellen), richting boven/onder, meldingskanaal
+  dashboard/push/beide. Alerts blijven na afgaan actief en kunnen
+  herhaaldelijk triggeren; zelf te pauzeren of verwijderen.
+- **Meldingenbel** in de header: badge met aantal ongelezen meldingen, klik
+  opent een paneel dat vanaf rechts inschuift. Elke melding heeft drie
+  acties: naar de coin springen (scrollt naar die positie in het
+  dashboard), snoozen (verbergen tot de alert opnieuw afgaat), of sluiten.
+- **Echte push-notificaties** via de Web Push API: service worker
+  (`public/sw.js`), VAPID-sleutels, en opslag van push-abonnementen in
+  Upstash Redis. Werkt ook als de site niet open staat, inclusief op
+  mobiel als de PWA is geïnstalleerd.
+- **Achtergrondcheck** via `/api/alerts/check` (beveiligd met
+  `ALERTS_CRON_SECRET`), bedoeld om elke 15 minuten aangeroepen te worden
+  door een externe gratis cron-dienst (Vercel's Hobby-plan staat geen
+  cron vaker dan 1x/dag toe).
+- Nieuw: `lib/alerts-store.ts`, `lib/alert-checker.ts`,
+  `lib/use-push-notifications.ts`, `app/alerts/`, `app/api/alerts/`,
+  `app/api/notifications/`, `app/api/push/`, `public/sw.js`.
+- Oude placeholder-alerts (statische `Alert`-type, `AlertsPanel` met
+  hardcoded voorbeelddata) volledig vervangen door het echte systeem.
+- Vereist: VAPID-sleutels en `ALERTS_CRON_SECRET` als nieuwe environment
+  variables op Vercel, en een externe cron-koppeling (zie README).
+
 ## 1.3.2 — 2026-08-07
 
 - Header is nu sticky (blijft zichtbaar bij scrollen) en het logo staat

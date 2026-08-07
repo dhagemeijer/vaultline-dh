@@ -40,7 +40,7 @@ export default function HoldingsTable({ holdings, prices }: Props) {
             {holdings.map((h) => {
               const { value, pl, plPct, change24h, positive } = computeRow(h, prices);
               return (
-                <tr key={h.symbol} className="border-b border-hairline/50 last:border-0 hover:bg-panel2/60">
+                <tr key={h.symbol} id={`coin-${h.symbol}`} className="scroll-mt-24 border-b border-hairline/50 last:border-0 hover:bg-panel2/60">
                   <td className="px-5 py-4">
                     <div className="font-display text-base">{h.name}</div>
                     <div className="font-mono text-xs text-parchment/50">{h.symbol}</div>
@@ -82,7 +82,7 @@ export default function HoldingsTable({ holdings, prices }: Props) {
         {holdings.map((h) => {
           const { value, pl, plPct, change24h, positive } = computeRow(h, prices);
           return (
-            <div key={h.symbol} className="rounded-2xl border border-hairline bg-panel p-4">
+            <div key={h.symbol} id={`coin-${h.symbol}`} className="scroll-mt-24 rounded-2xl border border-hairline bg-panel p-4">
               <div className="mb-2 flex items-start justify-between">
                 <div>
                   <div className="font-display text-base">{h.name}</div>

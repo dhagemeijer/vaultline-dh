@@ -1,5 +1,6 @@
 import { fetchPrices, fetchMarketMovers } from "@/lib/bitvavo";
-import { alerts, availableBalanceEUR, holdings } from "@/lib/portfolio";
+import { availableBalanceEUR, holdings } from "@/lib/portfolio";
+import { getAlerts } from "@/lib/alerts-store";
 import { RiskTier } from "@/lib/types";
 import Link from "next/link";
 
@@ -31,6 +32,13 @@ export default async function DashboardPage() {
     marketLosers = market.losers;
   } catch {
     // stil falen — sectie toont dan leeg, portfolio-deel blijft werken
+  }
+
+  let alerts: Awaited<ReturnType<typeof getAlerts>> = [];
+  try {
+    alerts = await getAlerts();
+  } catch {
+    // stil falen — alerts-paneel toont dan "nog geen alerts"
   }
 
   const totalValue = holdings.reduce((sum, h) => sum + h.amount * (prices[h.symbol]?.price ?? h.avgBuyPrice), 0);
@@ -100,7 +108,7 @@ export default async function DashboardPage() {
       </section>
 
       <section>
-        <AlertsPanel alerts={alerts} prices={prices} />
+        <AlertsPanel alerts={alerts} />
       </section>
     </main>
   );

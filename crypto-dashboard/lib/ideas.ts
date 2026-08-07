@@ -56,9 +56,9 @@ export const ideas: Idea[] = [
   {
     title: "Instelbare prijs-alerts per coin",
     description:
-      "Zelf een alert instellen op een specifieke coin, die een melding geeft zodra deze een door jou opgegeven waarde bereikt.",
+      "Alert per coin op bedrag of percentage, boven of onder, met dashboard- en/of push-meldingen. Blijft actief na afgaan, zelf te pauzeren of verwijderen. Meldingenpaneel met snooze/sluiten/naar-coin per melding.",
     phase: "fase 1 — dashboard",
-    status: "idee",
+    status: "gebouwd",
   },
   {
     title: "Automatische marge / stop-loss",

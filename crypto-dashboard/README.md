@@ -26,6 +26,37 @@ Open http://localhost:3000
 Pas `lib/mockPortfolio.ts` aan met je eigen posities (coin, hoeveelheid,
 gemiddelde aankoopprijs, risiconiveau) en je beschikbare saldo.
 
+## Prijs-alerts instellen (belangrijk, na deployen)
+
+Vanaf deze versie kun je op `/alerts` prijs-alerts instellen per coin, met
+meldingen via het dashboard en/of echte push-notificaties. Om dit te laten
+werken:
+
+1. **Upstash Redis** — als je die al gekoppeld hebt (voor de eerdere
+   login-poging), is dat voldoende; dezelfde database wordt nu gebruikt voor
+   alerts, meldingen en push-abonnementen. Nog niet gekoppeld? Zie de
+   instructies die je eerder kreeg (Vercel > Storage > Marketplace Database
+   Storage > Upstash > Redis).
+2. **VAPID-sleutels genereren** — draai lokaal (of vraag mij) `npx web-push
+   generate-vapid-keys`. Voeg de twee gegenereerde sleutels toe als
+   environment variables op Vercel:
+   - `VAPID_PUBLIC_KEY`
+   - `VAPID_PRIVATE_KEY`
+   - `NEXT_PUBLIC_VAPID_PUBLIC_KEY` — dezelfde waarde als `VAPID_PUBLIC_KEY`
+     (moet ook client-side beschikbaar zijn, vandaar de `NEXT_PUBLIC_`
+     prefix)
+3. **ALERTS_CRON_SECRET instellen** — een willekeurige string
+   (`openssl rand -base64 24`) als environment variable, ter beveiliging van
+   de check-route.
+4. **Redeploy.**
+5. **Externe cron-dienst koppelen** — Vercel's gratis plan staat geen
+   cron vaker dan 1x/dag toe, dus gebruik een gratis externe dienst (bv.
+   cron-job.org) om elke 15 minuten een GET-request te sturen naar:
+   `https://<jouw-domein>/api/alerts/check`
+   met header `Authorization: Bearer <ALERTS_CRON_SECRET>`.
+6. Ga naar `/alerts`, maak een alert aan met kanaal "Push" of "Beide" — je
+   browser vraagt dan om toestemming voor meldingen.
+
 ## Bekende beperkingen (bewust, voor fase 1)
 
 - **Historische grafiek is placeholder-data.** Om de échte ontwikkeling van je
