@@ -1,0 +1,90 @@
+# Changelog
+
+Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
+Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
+
+## 1.3.1 — 2026-08-07
+
+- Login (uit 1.3.0) teruggedraaid. De inhoudelijke code werkte, maar de
+  bestandsstructuur — met name de map `app/api/auth/[...nextauth]/` — bleek
+  niet goed te uploaden via GitHub's webinterface (vierkante haken in
+  mapnamen breken de drag-and-drop uploader). Favicon/PWA-icoon uit 1.3.0
+  blijven staan.
+- Idee "Login voor jezelf" terug op de roadmap (`lib/ideas.ts`), met een
+  notitie: opnieuw oppakken zodra het project via git of GitHub Desktop
+  gepusht kan worden i.p.v. de webuploader.
+- Verwijderd: `lib/auth-store.ts`, `lib/auth-options.ts`, `app/login/`,
+  `app/api/auth/`, `middleware.ts`, `components/AuthProvider.tsx`,
+  `.env.example`. Packages `next-auth`, `@upstash/redis`, `bcryptjs`
+  verwijderd uit `package.json`.
+
+## 1.3.0 — 2026-08-07
+
+- Favicon en PWA-installatie-icoon toegevoegd op basis van het monogram
+  (`public/manifest.json`, favicon- en apple-touch-icon-formaten). Bij
+  "toevoegen aan beginscherm" op mobiel gebruikt de app nu naam en logo van
+  Vaultline.
+- ~~Login toegevoegd~~ — zie 1.3.1, teruggedraaid vanwege deploy-problemen.
+
+## 1.2.0 — 2026-08-07
+
+- Logo's verwerkt: gecombineerd logo bovenaan in een nieuwe donkere
+  headerband op elke pagina (`components/SiteHeader.tsx`), monogram in de
+  footer (`components/Footer.tsx`). Achtergrond van beide bestanden
+  getransparant gemaakt.
+- Dubbele "Vaultline"/paginanaam-labels opgeschoond nu het logo die rol
+  overneemt.
+
+## 1.1.0 — 2026-08-07
+
+- Applicatienaam gekozen: **Vaultline**. Verwerkt in titel en metadata
+  (logo volgt later, plek staat klaar in de footer).
+- Footer toegevoegd op elke pagina: © jaartal, naam, "Vaultline", en het
+  versienummer met link naar de changelog (verplaatst uit de header).
+- Versienummer/changelog-link staat nu in de footer i.p.v. de dashboard-
+  header.
+- Changelog-pagina toegevoegd op `/changelog`, leest `CHANGELOG.md` uit het
+  project en toont het huidige versienummer.
+- Connectie-indicator toegevoegd naast "Bitvavo" in de header: groen
+  (verbonden) / oranje (verbinden) / rood (niet verbonden), met tooltip.
+  Nieuwe route `/api/status` pingt Bitvavo elke 30s.
+- Marktbreed overzicht van grootste stijgers/dalers toegevoegd naast je
+  eigen portfolio-bewegers (`fetchMarketMovers` in `lib/bitvavo.ts`).
+
+## 1.0.1 — 2026-08-07
+
+- Idee toegevoegd aan de roadmap: instelbare prijs-alerts per coin
+  (`lib/ideas.ts`).
+
+## 1.0.0 — 2026-08-07 — Fase 1
+
+- Project gestart: Next.js + Tailwind, TypeScript.
+- Live Bitvavo-koersen gekoppeld via de publieke `/v2/ticker/24h` endpoint
+  (`lib/bitvavo.ts`), met graceful fallback als de API niet bereikbaar is.
+- Componenten gebouwd:
+  - `WalletSummary` — totale walletwaarde, dagverandering, beschikbaar saldo
+  - `RiskSpectrum` — visuele meter met verdeling over 3 risiconiveaus
+    (risicovol / relatief veilig / stabiel)
+  - `HoldingsTable` — per coin: bezit, waarde, resultaat (plus/min), 24u-
+    verandering, risicobadge
+  - `PerformanceChart` — ontwikkeling van de wallet met uur/dag/week/maand-
+    toggle (nog placeholder-data, zie "Bekende beperkingen" in README)
+  - `TopMovers` — grootste stijger/daler van vandaag
+  - `AlertsPanel` — visuele drempelmeldingen, geen automatische actie
+- README met projectuitleg, bekende beperkingen en roadmap.
+- Kleurenschema: licht/warm wit met zwarte tekst en donkerrood (#8b0000) als
+  accentkleur, na mockup-review.
+- Responsive gemaakt: holdings-tabel wordt op mobiel een gestapelde
+  kaartenlijst, header en waardes schalen mee op kleine schermen.
+- Echte holdings verwerkt: ETH en BAT, met gemiddelde aankoopprijs
+  teruggerekend uit de Bitvavo-cijfers. Voorbeelddata (`mockPortfolio.ts`)
+  vervangen door `lib/portfolio.ts`.
+- Ideeën & roadmap-pagina toegevoegd op `/ideeen`, gegroepeerd per fase met
+  statuslabels (`lib/ideas.ts`). Link staat in de dashboard-header.
+- Dashboard live gezet op Vercel, gekoppeld aan GitHub
+  (root directory: `crypto-dashboard`, framework preset: Next.js).
+- Changelog toegevoegd (dit bestand).
+
+## Ideeën die nog niet gebouwd zijn
+
+Zie `/ideeen` in het dashboard zelf voor het volledige, actuele overzicht.
