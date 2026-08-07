@@ -7,9 +7,9 @@ export default function Footer() {
 
   return (
     <footer className="mt-16 bg-parchment">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 py-8 text-center sm:flex-row sm:justify-between sm:px-6 sm:text-left">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 py-5 text-center sm:flex-row sm:justify-between sm:px-6 sm:py-4 sm:text-left">
         <div className="flex items-center gap-2.5 font-mono text-xs text-ink/60">
-          <Image src="/vaultline-monogram.png" alt="" width={40} height={40} className="h-6 w-6" aria-hidden="true" />
+          <Image src="/vaultline-monogram.png" alt="" width={40} height={40} className="h-9 w-9" aria-hidden="true" />
           <span>© {year} Vaultline</span>
         </div>
         <Link href="/changelog" className="font-mono text-xs text-ink/50 underline hover:text-ink/80">

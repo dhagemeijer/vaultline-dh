@@ -68,6 +68,13 @@ export const ideas: Idea[] = [
     status: "idee",
   },
   {
+    title: "Derde gauge op het dashboard",
+    description:
+      "Twee gauges staan er nu (winst/verlies sinds gisteren, belegd vs. saldo). Mogelijk een risiconiveau-gauge (gewogen gemiddelde van de risicospreiding), of iets anders — nog te bepalen.",
+    phase: "fase 1 — dashboard",
+    status: "idee",
+  },
+  {
     title: "Spraakbediening",
     description: "Met het dashboard kunnen communiceren via spraak in plaats van alleen tekst/klik.",
     phase: "later",

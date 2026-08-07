@@ -3,6 +3,30 @@
 Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
 Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
 
+## 1.5.0 — 2026-08-07
+
+- **Dashboard-indeling herzien:**
+  - Twee gauges bovenaan: winst/verlies sinds gisteren 00:00u (benaderd met
+    24u-verandering, exacte 00:00u-snapshot volgt met historische opslag),
+    en belegd-vs-saldo-verhouding. Plek voor een derde gauge is aangehouden
+    voor later (`components/Gauge.tsx`, herbruikbaar).
+  - Investeringen (holdings) en stijgers/dalers staan nu naast elkaar op
+    desktop, onder elkaar op mobiel.
+  - Risicospreiding is verplaatst naar helemaal onderaan de pagina.
+- **Alerts-beheer verplaatst** naar een eigen knop in de header (naast de
+  meldingenbel), die net als meldingen een sliding paneel opent vanaf
+  rechts. Alerts aanmaken, bewerken (edit) en verwijderen (delete) kan nu
+  direct vanuit dat paneel — de losse `/alerts`-pagina is vervallen.
+  Nieuw: `components/AlertsButton.tsx`, `components/AlertsManagerPanel.tsx`.
+- Oude `AlertsPanel`-kaart (met link naar `/alerts`) verwijderd; die
+  functionaliteit zit nu volledig in het nieuwe paneel.
+
+## 1.4.1 — 2026-08-07
+
+- Header: verticale padding rond het logo verkleind naar 10px op desktop
+  (20px blijft op mobiel), logo zelf groter.
+- Footer: monogram groter, padding wat strakker.
+
 ## 1.4.0 — 2026-08-07
 
 - **Instelbare prijs-alerts** toegevoegd op `/alerts`: per coin, drempel als
