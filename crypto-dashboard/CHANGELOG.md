@@ -3,6 +3,15 @@
 Alle noemenswaardige wijzigingen aan het dashboard, nieuwste bovenaan.
 Versienummering: x.y.z — x = major, y = nieuwe functionaliteit, z = bugfixes/kleine aanpassingen.
 
+## 1.3.2 — 2026-08-07
+
+- Header is nu sticky (blijft zichtbaar bij scrollen) en het logo staat
+  groter.
+- Favicon/PWA-iconen opnieuw gegenereerd met minder witruimte rond het
+  monogram, zodat de "V" op klein formaat duidelijker oogt.
+- Footer is nu een volle zwarte band (i.p.v. een dunne rand), met een groter
+  monogram, en toont "Vaultline" naast het jaartal in plaats van de naam.
+
 ## 1.3.1 — 2026-08-07
 
 - Login (uit 1.3.0) teruggedraaid. De inhoudelijke code werkte, maar de
